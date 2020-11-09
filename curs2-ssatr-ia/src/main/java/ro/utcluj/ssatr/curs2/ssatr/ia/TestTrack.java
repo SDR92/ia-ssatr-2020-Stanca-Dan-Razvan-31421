@@ -37,7 +37,7 @@ public class TestTrack {
        String all = "";
        for(Car c: cars){ 
            if(c!=null){
-            String line = "Car name="+c.getName()+" speed="+c.speed+"\n";
+            String line = "Car name="+c.getName()+" speed="+c.speed+" and \nplate number="+c.getPlateNumber()+"\n";
             all=all+line;
            }
        }
@@ -47,10 +47,12 @@ public class TestTrack {
     public static void main(String[] args) {
         TestTrack track1 = new TestTrack();
         
-        track1.addCar(new ElectricCar("Tesla 1", 0));
-        track1.addCar(new ElectricCar("Tesla 2", 0));
-        track1.addCar(new DieselCar("Tesla 2", 0));
-        track1.addCar(new DieselCar("Tesla 2", 0));
+        track1.addCar(new ElectricCar("Tesla 1", 0, "CJ99ABC"));
+        track1.addCar(new ElectricCar("Tesla 2", 0, "CJ99BCD"));
+        track1.addCar(new DieselCar("Tesla 2", 0, "CJ99DEF"));
+        track1.addCar(new DieselCar("Tesla 2", 0, "CJ99EFG"));
+        track1.addCar(new OttoCar("Opel 1", 0, "CJ99FGH"));
+        track1.addCar(new OttoCar("Opel 2", 0, "CJ99GHI"));
         
         track1.testAccelerate(4);
         
