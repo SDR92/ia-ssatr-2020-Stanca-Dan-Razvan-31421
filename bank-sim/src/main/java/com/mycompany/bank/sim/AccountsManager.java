@@ -20,15 +20,6 @@ public class AccountsManager {
        System.out.println("You can't creare more than "+accounts.length+" accounts");
     }
     
-    int getTotalBalance() {
-       int balance = 0;
-       for(BankAccount a: accounts){ 
-           if(a!=null){
-            balance=balance+a.getBalance();
-           }
-       }
-       return balance;
-    }
     
     String getAccountDetails() {
        String message = "";
