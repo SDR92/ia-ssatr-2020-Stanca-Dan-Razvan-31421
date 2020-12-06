@@ -20,9 +20,4 @@ public class BankAccount {
     public int getBalance() {
         return balance;
     }
-    public int getBalance(int b) {
-        return getBalance(0);
-    }
 }
-    
-   

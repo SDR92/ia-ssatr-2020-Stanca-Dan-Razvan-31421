@@ -10,13 +10,14 @@ public class AccountsManager {
     
     BankAccount[] accounts = new BankAccount[10];
     
-    void AddAccount(BankAccount a) {
-        for(int i = 0; i < accounts.length; i++){
-           if(accounts[i] == null){
+    void addAccount(BankAccount a) {
+        for(int i=0;i<accounts.length;i++){
+           if(accounts[i]==null){
                accounts[i] = a;
-           } 
-        }
-       System.out.println("Can't create more than "+accounts.length+" accounts");
+               return;
+           }           
+       }
+       System.out.println("You can't creare more than "+accounts.length+" accounts");
     }
     
     int getTotalBalance() {
@@ -27,5 +28,21 @@ public class AccountsManager {
            }
        }
        return balance;
+    }
+    
+    String getAccountDetails() {
+       String message = "";
+       for(BankAccount a: accounts){ 
+           if(a!=null){
+            String line = "The owner is "+a.getOwner()+" and the balance is "+a.getBalance()+"\n";
+            message=message+line;
+           }
+       }
+       return message;
+        
+    }
+      
+    public static void main(String[] args) {
+        AccountsManager am = new AccountsManager();
     }
 }
